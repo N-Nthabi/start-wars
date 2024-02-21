@@ -5,7 +5,8 @@ module.exports = {
       "password": process.env.DB_PASSWORD,
       "database": process.env.DB_NAME,
       "host": process.env.DB_HOST,
-      "dialect": process.env.DB_DIALECT || 'postgres'
+      "dialect": process.env.DB_DIALECT || 'postgres',
+      "saltRounds": Number(process.env.SALT_ROUNDS)
     },
     "test": {
         "username": process.env.DB_USERNAME,

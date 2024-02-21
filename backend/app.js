@@ -1,9 +1,11 @@
 var express = require('express');
 require("dotenv").config();
+const usersRouter = require("./src/routes/users");
+
+
 var app = express();
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-app.listen(4000, function() {
-    console.log('hey', process.env.DB_DIALECT);
-});
+app.use(express.json());
+app.use("/users", usersRouter);
+
+
+app.listen(4000);
